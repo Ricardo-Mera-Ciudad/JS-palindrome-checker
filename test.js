@@ -1,8 +1,10 @@
 //true cuando sea palíndromo
 
 function palindrome(str) {
+  //declaring arrays
   let array = [];
   let arrayReverse = [];
+  //character checking, only alphanumerics in lowercase
   for (let i = 0; i < str.length; i++) {
     let charTest = str[i].toLowerCase();
     let regex = /^[a-z0-9]*$/;
@@ -12,8 +14,9 @@ function palindrome(str) {
       arrayReverse.push(charTest);
     }
   }
-
+  //reverse arrayReverse
   arrayReverse.reverse();
+  //apply toString()
   let stringedArray = array.toString();
   let stringedArrayReverse = arrayReverse.toString();
 
@@ -22,6 +25,7 @@ function palindrome(str) {
   //   console.log(stringedArray);
   //   console.log(stringedArrayReverse);
 
+  //comparing both arrays
   if (stringedArray == stringedArrayReverse) {
     console.log(str + " Es palíndromo");
     return true;
@@ -31,7 +35,7 @@ function palindrome(str) {
   }
 }
 
-//TEST
+//TESTS
 palindrome("eye"); //true
 palindrome("_eye"); //true
 palindrome("race car"); //true
